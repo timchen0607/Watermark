@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>證件浮水印工具</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>證件浮水印工具</h1>
+      <p>
+        此網站並不會備份您的圖片，您可以安心服用!<br />修改後點擊圖片進行更新!!
+      </p>
+      <canvas id="preview"></canvas>
+      <input type="file" id="upload" onchange="drawImg()" />
+      <div class="input-group">
+        <label for="watermark">文字內容</label>
+        <input
+          type="text"
+          id="watermark"
+          value="僅提供○○銀行用來申請○○信用卡他用無效"
+          onblur="drawImg()"
+        />
+      </div>
+      <div class="input-group">
+        <label for="fontsize">文字尺寸</label>
+        <input
+          type="number"
+          id="fontsize"
+          min="12"
+          max="100"
+          value="20"
+          onblur="drawImg()"
+        />
+      </div>
+      <label for="upload" class="uploadBtn">上傳圖片</label>
+      <a href="#" class="downloadBtn" id="download" onclick="getUrl()"
+        >下載圖片</a
+      >
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
